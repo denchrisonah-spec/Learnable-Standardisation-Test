@@ -1,7 +1,7 @@
 # Bandage — E-Commerce Store
 
 ## Project Overview
-This project is a functional frontend implementation of the "Bandage" Figma design. It is built from scratch using **React, Vite, and TypeScript**, entirely styled with **hand-written CSS** (no CSS frameworks or component libraries). State management and API data fetching are handled seamlessly using **Redux Toolkit** and **RTK Query** with mock data provided by the DummyJSON API.
+This project is a functional frontend implementation of the "Bandage" Figma design. It is built from scratch using **React, Vite, and TypeScript**, entirely styled with **hand-written CSS** (no CSS frameworks or component libraries). State management and API data fetching are handled seamlessly using **Redux Toolkit** and **RTK Query** with mock data provided by the DummyJSON API
 
 ## Installation Instructions
 To get this project up and running on your local machine, follow these steps:
