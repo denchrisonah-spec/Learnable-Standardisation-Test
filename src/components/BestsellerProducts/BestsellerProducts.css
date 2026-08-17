@@ -1,0 +1,181 @@
+.products__inner {
+  max-width: 1124px;
+  margin-inline: auto;
+  padding: 80px 16px;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 30px;
+  row-gap: 39px;
+  margin-top: 48px;
+}
+
+.products__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.products__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.products__error p {
+  color: var(--color-text-second);
+}
+
+/* ── card ───────────────────────────────────────────────────────────────── */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-light);
+}
+
+.product-card__media {
+  position: relative;
+  display: block;
+  height: 238px;
+  overflow: hidden;
+}
+
+.product-card__img {
+  transition: transform 0.5s;
+}
+
+.product-card:hover .product-card__img {
+  transform: scale(1.05);
+}
+
+/* Not in the Figma comp — the actions the API integration needs. */
+.product-card__actions {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  opacity: 0;
+  background: rgb(37 43 66 / 0);
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.product-card:hover .product-card__actions,
+.product-card__actions:focus-within {
+  opacity: 1;
+  background: rgb(37 43 66 / 0.25);
+}
+
+.product-card__add {
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: var(--color-light);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.product-card__add:hover {
+  background: var(--color-primary-disabled);
+}
+
+.product-card__wish {
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  background: var(--color-light);
+  transition: background-color 0.2s;
+}
+
+.product-card__wish[aria-pressed="true"] {
+  background: var(--color-danger);
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 10px 35px;
+  text-align: center;
+}
+
+.product-card__title {
+  color: var(--color-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card__category {
+  color: var(--color-text-second);
+  white-space: nowrap;
+}
+
+.product-card__prices {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 5px 3px;
+}
+
+.product-card__was {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+.product-card__now {
+  color: var(--color-secondary-1);
+}
+
+/* ── skeleton ───────────────────────────────────────────────────────────── */
+.product-skeleton {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-light);
+  animation: product-pulse 1.6s ease-in-out infinite;
+}
+
+.product-skeleton__media {
+  height: 238px;
+  background: var(--color-light-gray-1);
+}
+
+.product-skeleton__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 25px 35px;
+}
+
+.product-skeleton__line {
+  height: 24px;
+  border-radius: 4px;
+  background: var(--color-light-gray-1);
+}
+
+.product-skeleton__line--a { width: 130px; }
+.product-skeleton__line--b { width: 100px; }
+.product-skeleton__line--c { width: 108px; height: 34px; }
+
+@keyframes product-pulse {
+  50% { opacity: 0.5; }
+}
+
+@media (min-width: 768px) {
+  .products__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .product-card__body { padding-inline: 25px; }
+}
+
+@media (min-width: 1024px) {
+  .products__grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
