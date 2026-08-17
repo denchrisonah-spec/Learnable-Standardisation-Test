@@ -1,0 +1,92 @@
+.testimonials__inner {
+  max-width: 1128px;
+  margin-inline: auto;
+  padding: 80px 16px;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.testimonials__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.testimonials__title {
+  color: var(--color-text);
+}
+
+.testimonial {
+  width: 100%;
+  max-width: 446px;
+  padding: 30px 35px;
+  border-radius: var(--radius);
+  background: var(--color-light);
+}
+
+.testimonial__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.testimonial__avatar {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--color-light-gray-1);
+}
+
+.testimonial__stars {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.testimonial__quote {
+  min-height: 48px;
+  color: var(--color-text-second);
+}
+
+.testimonial__caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial__name {
+  color: var(--color-primary);
+}
+
+.testimonial__role {
+  color: var(--color-text);
+}
+
+/* The comp's decorative mosaic, filled with recipe photography. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gallery__cell {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--color-light-gray-1);
+}
+
+@media (min-width: 1024px) {
+  .testimonials__grid { grid-template-columns: 438fr 464fr; }
+}

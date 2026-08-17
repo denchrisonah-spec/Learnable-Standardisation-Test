@@ -1,0 +1,81 @@
+.cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* The comp's still life is cropped out of this plate; the featured product
+   now occupies that side of the composition instead. */
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta__art {
+  display: none;
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  width: 34%;
+  padding: 40px;
+  pointer-events: none;
+}
+
+.cta__art-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cta__art img {
+  object-position: bottom;
+}
+
+.cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 160px 16px 112px;
+  text-align: center;
+}
+
+.cta__eyebrow {
+  color: var(--color-primary);
+}
+
+.cta__title {
+  max-width: 607px;
+  color: var(--color-text);
+}
+
+.cta__description {
+  max-width: 447px;
+  color: var(--color-text-second);
+}
+
+.cta__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-inline: 3px;
+}
+
+.cta__was {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+.cta__now {
+  color: var(--color-secondary-1);
+}
+
+@media (min-width: 1024px) {
+  .cta__art { display: block; }
+}

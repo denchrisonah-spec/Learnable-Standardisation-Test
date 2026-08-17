@@ -1,0 +1,39 @@
+.services__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: 80px 16px;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 35px 40px;
+  text-align: center;
+}
+
+.service__title {
+  max-width: 235px;
+  color: var(--color-text);
+}
+
+.service__description {
+  max-width: 232px;
+  color: var(--color-text-second);
+}
+
+@media (min-width: 768px) {
+  .services__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
