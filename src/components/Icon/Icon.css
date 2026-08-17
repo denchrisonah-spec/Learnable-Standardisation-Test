@@ -1,0 +1,5 @@
+.icon {
+  display: block;
+  /* Icons sit inside flex rows next to text and must never be squeezed. */
+  flex-shrink: 0;
+}

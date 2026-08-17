@@ -1,0 +1,21 @@
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 691px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-heading__eyebrow {
+  color: var(--color-text-second);
+}
+
+.section-heading__title {
+  color: var(--color-text);
+}
+
+.section-heading__description {
+  color: var(--color-text-second);
+}
