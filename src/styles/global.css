@@ -1,0 +1,159 @@
+/*
+ * Design system gotten from the Figma file
+ */
+:root {
+  /* Colors */
+  --color-primary: #23a6f0;
+  --color-primary-disabled: #8ec2f2;
+  --color-secondary: #f3cd03;
+  --color-secondary-1: #23856d;
+  --color-success: #2dc071;
+  --color-danger: #e74040;
+  --color-text: #252b42;
+  --color-text-second: #737373;
+  --color-muted: #bdbdbd;
+  --color-light: #ffffff;
+  --color-light-gray-1: #fafafa;
+  --color-border: #e6e6e6;
+
+  /* Typography — the whole design is Montserrat */
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --fs-h1: 58px;   --lh-h1: 80px;  --ls-h1: 0.2px;
+  --fs-h2: 40px;   --lh-h2: 50px;  --ls-h2: 0.2px;
+  --fs-h3: 24px;   --lh-h3: 32px;  --ls-h3: 0.1px;
+  --fs-h4: 20px;   --lh-h4: 30px;  --ls-h4: 0.2px;
+  --fs-h5: 16px;   --lh-h5: 24px;  --ls-h5: 0.1px;
+  --fs-h6: 14px;   --lh-h6: 24px;  --ls-h6: 0.2px;
+  --fs-body: 14px; --lh-body: 20px; --ls-body: 0.2px;
+  --fs-btn: 14px;  --lh-btn: 22px; --ls-btn: 0.2px;
+  --fs-small: 12px; --lh-small: 16px; --ls-small: 0.2px;
+
+  /* Effects + layout */
+  --shadow-light: 0 2px 4px rgb(0 0 0 / 0.1);
+  --container: 1050px;
+  --radius: 5px;
+}
+
+/* ── reset ──────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-light);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── the design's named text styles ─────────────────────────────────────── */
+.t-h1 { font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-h1); font-weight: 700; }
+.t-h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); font-weight: 700; }
+.t-h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: var(--ls-h3); font-weight: 700; }
+.t-h4 { font-size: var(--fs-h4); line-height: var(--lh-h4); letter-spacing: var(--ls-h4); font-weight: 400; }
+.t-h5 { font-size: var(--fs-h5); line-height: var(--lh-h5); letter-spacing: var(--ls-h5); font-weight: 700; }
+.t-h6 { font-size: var(--fs-h6); line-height: var(--lh-h6); letter-spacing: var(--ls-h6); font-weight: 700; }
+.t-body { font-size: var(--fs-body); line-height: var(--lh-body); letter-spacing: var(--ls-body); font-weight: 400; }
+.t-small { font-size: var(--fs-small); line-height: var(--lh-small); letter-spacing: var(--ls-small); font-weight: 400; }
+
+/* ── shared layout ──────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.section {
+  background: var(--color-light);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Fills its positioned parent — the vanilla-CSS stand-in for next/image fill. */
+.img-cover,
+.img-contain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-cover { object-fit: cover; }
+.img-contain { object-fit: contain; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
